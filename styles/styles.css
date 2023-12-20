@@ -1,3 +1,11 @@
+/* general */
+
+:root {
+    --main-bg-color: #9b86dc;
+    --bg-color-dark: #432e7fd6;
+    --text-color: #fff;
+  }
+
 /* mobile view */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -8,7 +16,7 @@ body {
 
 header {
     display: flex;
-    background-color: #9b86dc;
+    background-color: var(--main-bg-color);
     color: white;
     justify-content: space-between;
     align-items: center;
@@ -54,8 +62,15 @@ nav ul {
 }
 
 nav {
-    background-color: #432e7fd6;
+    background-color: var(--bg-color-dark);
     padding: 1rem 0;
+}
+
+/* alert box */
+
+.alert {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
 }
 
 
@@ -73,7 +88,8 @@ nav {
         grid-template-areas: 'header header header' 
                              'nav main main'
                              'nav main main';
-        grid-template-columns: .5fr 2fr 2fr;
+        grid-template-columns: 100px 2fr 2fr;
+        grid-auto-rows: fit-content(200px);
     }
 
     header {
