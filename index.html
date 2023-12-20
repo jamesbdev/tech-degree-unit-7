@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web dashboard</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!--fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +14,11 @@
     <div class="grid-container">
         <header>
             <h1>Webapp</h1>
-            <img src="svgs/bell.svg" alt="bell icon" width="25">
+            <div class="bell-container">
+              <img src="svgs/bell.svg" alt="bell icon" width="25">
+              <div class="green-marker"></div>
+            </div>
+           
             <div class="student-container">
                 <img class="profile-img" src="images/member-1.jpg" alt="student profile">
                 <h2>Student name</h2>
@@ -34,6 +37,7 @@
                 <h3>Dashboard</h3>
                 <div class="alert">
                     <p>Alert: you have unread messages</p>
+                    <div class="close-icon">X</div>
                 </div>
             </section>
             <section>
@@ -49,7 +53,7 @@
         </main>
     </div>
 
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
     <script src="script/app.js"></script>
 </body>
 </html>
