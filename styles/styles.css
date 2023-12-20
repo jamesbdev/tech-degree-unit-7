@@ -64,7 +64,33 @@ nav {
 @media (min-width: 768px) {
     nav ul {
         flex-direction: column;
+        align-items: center;
+        height: 100%;
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'header header header' 
+                             'nav main main'
+                             'nav main main';
+        grid-template-columns: .5fr 2fr 2fr;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    nav {
+        grid-area: nav;
+        padding: 1rem .5rem;
+        height: 100%;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+
 }
 
 
