@@ -46,7 +46,7 @@ header .student-container {
 /* Navigation */
 nav ul {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 0;
     justify-content: center;
     list-style-type: none;
@@ -54,7 +54,8 @@ nav ul {
 }
 
 nav {
-    background-color: #9b86dc;
+    background-color: #432e7fd6;
+    padding: 1rem 0;
 }
 
 
