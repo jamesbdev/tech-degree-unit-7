@@ -12,6 +12,10 @@ body {
     margin: 0;
 }
 
+main {
+    margin: 0 .5rem;
+}
+
 /** header **/ 
 
 header {
@@ -64,7 +68,7 @@ header .student-container {
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: rgb(72, 213, 72);
+    background-color: lightgreen;
     top: 5px;
     right: -5px;
     position: absolute;
@@ -102,7 +106,7 @@ header .student-container {
 
 .close-icon {
     position: absolute;
-    top: 0.7rem;
+    top: 0.6rem;
     right: 1rem;
     cursor: pointer;
     font-size: 0.8rem;
@@ -113,7 +117,19 @@ header .student-container {
 .graph-nav ul {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+    gap: .8rem;
+    align-items: center;
+    padding: 0;
+}
+
+.graph-nav ul li.active {
+    background: lightgreen;
+    border-radius: 10px;
+    padding: .7rem;
+}
+
+.graph-nav ul li {
+    font-weight: 500;
 }
 
 /* tablet view */
