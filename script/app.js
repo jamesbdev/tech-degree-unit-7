@@ -44,11 +44,12 @@ new Chart(trafficChart, {
 new Chart(dailyTraffic, {
     type: 'bar',
     data: {
-        labels: ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
             label: 'Number of views',
-            data: [100, 200, 300, 400, 500, 600],
-            borderWidth: 1
+            data: [100, 200, 250, 150, 300, 450, 200],
+            borderWidth: 1,
+            backgroundColor: '#9b86dc'
         }]
     }
 })
@@ -63,7 +64,8 @@ new Chart(mobileUser, {
         datasets: [{
             label: 'Number of views',
             data: [100, 200, 300],
-            borderWidth: 1
+            borderWidth: 1,
+            backgroundColor: ['#9b86dc', 'mediumseagreen', 'darkturquoise']
         }]
     }
 })
