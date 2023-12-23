@@ -18,24 +18,17 @@ const mobileUser = document.querySelector('#mobile-user');
 new Chart(trafficChart, {
     type: 'line',
     data: {
-        labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6"],
+        labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
         datasets: [{
             label: 'Number of views',
-            data: [500, 2000, 1500, 2000, 2500, 3000],
+            data: [500, 1200, 1500, 1000, 1200, 800, 900, 450, 200, 430],
             borderWidth: 1,
             borderColor: '#9b86dc',
             backgroundColor: '#9b86dc',
-            color: '#9b86dc'
+            color: '#9b86dc',
+            fill: true,
+            borderJoinStyle: 'round'
         }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-  
-
     }
 })
 
