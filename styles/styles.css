@@ -146,12 +146,33 @@ header .student-container {
 
 .social-child {
     display: flex;
+    padding: 1rem;
+    background-color: #efefef;
+    border: 1px solid #c8c2c2;
+    border-radius: 10px;
+    margin: 0.5rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.social-child p {
+    font-size: 1.2rem;
+    color: #c8c2c2;
+    margin: 0;
+}
+
+.social-child h5 {
+    color: #9b86dc;
+    /* margin: 0.4rem; */
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
 }
 
 .social-icon {
     background-color: #9b86dc;
     border-radius: 50%;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 
 
@@ -161,13 +182,14 @@ header .student-container {
         flex-direction: column;
         align-items: center;
         height: 100%;
+        justify-content: flex-start;
     }
 
     .grid-container {
         display: grid;
         grid-template-areas: 'header header header' 
-                             '.main-nav main main'
-                             '.main-nav main main';
+                             'main-nav main main'
+                             'main-nav main main';
         grid-template-columns: 100px 2fr 2fr;
         grid-auto-rows: fit-content(200px);
     }
@@ -177,7 +199,7 @@ header .student-container {
     }
 
     .main-nav {
-        grid-area: .main-nav;
+        grid-area: main-nav;
         padding: 1rem .5rem;
         height: 100%;
     }
