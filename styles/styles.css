@@ -119,6 +119,10 @@ header .student-container {
 
 /* Graph */ 
 
+.traffic-chart {
+    margin-bottom: 1.5rem;
+}
+
 .graph-nav ul {
     list-style-type: none;
     display: flex;
@@ -135,6 +139,11 @@ header .student-container {
 
 .graph-nav ul li {
     font-weight: 500;
+}
+
+.daily-traffic {
+    border-top: 1px solid #c8c2c2;
+    border-bottom: 1px solid #c8c2c2;
 }
 
 /* social stats widget */
@@ -154,6 +163,7 @@ header .student-container {
     gap: 1rem;
     align-items: center;
     justify-content: flex-start;
+    flex-grow: 1;
 }
 
 .social-child p {
@@ -189,8 +199,15 @@ header .student-container {
 
     .graph-container {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         width: 100%;
+        /* max-width: 100%; */
+    }
+
+    .graph-container section {
+        flex-grow: 1;
+        border-top: 1px solid #9d9898;
+        /* padding: 0.5rem; */
     }
 
     .social-container {

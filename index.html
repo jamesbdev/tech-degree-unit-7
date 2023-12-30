@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -42,7 +41,7 @@
                     <div class="close-icon">X</div>
                 </div>
             </section>
-            <section>
+            <section class="traffic-chart">
                 <h4>Traffic</h4>
                 <nav class="graph-nav">
                     <ul><li class="active">Hourly</li>
@@ -55,11 +54,11 @@
                 <canvas id="traffic-chart"></canvas>
             </section>
             <div class="graph-container">
-                <section>
+                <section class="daily-traffic">
                     <h4>Daily traffic</h4>
                     <canvas id="daily-traffic"></canvas>
                 </section>
-                <section>
+                <section class="mobile-users">
                     <h4>Mobile users</h4>
                     <canvas id="mobile-user"></canvas>
                 </section>
