@@ -129,6 +129,7 @@ header .student-container {
     gap: .8rem;
     align-items: center;
     padding: 0;
+
 }
 
 .graph-nav ul li.active {
@@ -193,6 +194,43 @@ header .student-container {
     align-items: center;
 }
 
+/* members section */
+
+.members-main {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #c8c2c2;
+}
+
+.members-individual {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #c8c2c2;
+    padding: 1rem;
+}
+
+.members-individual img {
+    border-radius: 50%; 
+    height: 50px;
+}
+
+.members-individual a {
+    color: var(--main-bg-color);
+    text-decoration: none;
+}
+
+.members-individual p {
+    margin: 0;
+}
+
+.members-text {
+    /* flex-basis: 250px; */
+    text-align: center;
+}
+
+
 
 /* tablet view */
 @media (min-width: 768px) {
@@ -243,6 +281,10 @@ header .student-container {
     main {
         grid-area: main;
     }
+
+    .graph-nav ul {
+      justify-content: flex-end;
+    }   
 
 
 }
