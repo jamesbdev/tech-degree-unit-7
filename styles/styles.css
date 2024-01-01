@@ -209,6 +209,7 @@ header .student-container {
     justify-content: center;
     border-bottom: 1px solid #c8c2c2;
     padding: 1rem;
+    font-size: 14px;
 }
 
 .members-individual img {
@@ -228,6 +229,10 @@ header .student-container {
 .members-text {
     /* flex-basis: 250px; */
     text-align: center;
+}
+
+.chevron-icon {
+  display: none;
 }
 
 
@@ -284,7 +289,28 @@ header .student-container {
 
     .graph-nav ul {
       justify-content: flex-end;
-    }   
+    }
+    
+    .members-individual {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.8rem;
+    }
+
+    .members-text {
+      text-align: left;
+    }
+
+    .members-individual .date, .chevron-icon {
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .chevron-icon {
+        transform: rotate(270deg);
+        color: var(--bg-color-dark);
+        display: inline;
+    }
 
 
 }
