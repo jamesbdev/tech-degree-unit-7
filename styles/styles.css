@@ -251,13 +251,33 @@ header .student-container {
 .error-message, .error-empty {
     color: red;
     font-size: 0.8rem;
-    margin: 0;
+    margin: 0 0 0.8rem;
 }
 
 .success-message {
     color: green;
     font-size: 0.8rem;
-    margin: 0;
+    margin: 0 0 1.2rem;
+}
+
+.submit-btn {
+    background-color: var(--main-bg-color);
+    padding: 0.8rem;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+}
+
+form input, form textarea {
+    border-radius: 5px;
+    padding: 0.8rem;
+    border: 1px solid #c8c2c2;
+    background-color: #efefef;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: #c8c2c2;
 }
 
 /* tablet view */

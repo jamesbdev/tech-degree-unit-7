@@ -76,6 +76,7 @@ const addValidation = () => {
     const errorElement = document.querySelector('.error-message');
     const errorEmpty = document.querySelector('.error-empty');
     const textArea = document.querySelector('#message').value;
+    const sectionTitle = document.querySelector('.message-title');
 
  //remove previous messages
     if (errorElement) {
@@ -83,7 +84,7 @@ const addValidation = () => {
     } else if (errorEmpty) {
         errorEmpty.remove();
     }
-    
+
  if (inputValue == '') {
     const errorMessage = document.createElement('p');
     errorMessage.innerText = "Error: Please select a user";
@@ -91,7 +92,7 @@ const addValidation = () => {
     //check if error message already exists
     if (errorElement == null) {
         //append to DOM if it doesn't exist
-        formElement.appendChild(errorMessage);
+       sectionTitle.insertAdjacentElement('afterend', errorMessage);
     }
  } else if (textArea == '') {
         const errorMessage = document.createElement('p');
@@ -100,7 +101,7 @@ const addValidation = () => {
         //check if error message already exists
         if (errorEmpty == null) {
             //append to DOM if it doesn't exist
-            formElement.appendChild(errorMessage);
+            sectionTitle.insertAdjacentElement('afterend', errorMessage);
         }
     }
 
@@ -111,14 +112,16 @@ const addSuccessMsg = () => {
     message.classList.add('success-message');
     const successMessage = document.querySelector('.success-message');
     const formElement = document.querySelector('#message-form');
+    const sectionTitle = document.querySelector('.message-title');
     const errorMessage = document.querySelector('.error-message');
     const errorEmpty = document.querySelector('.error-empty');
 
     //checks if success message already exists
     if (successMessage == null && errorMessage == null && errorEmpty == null) {
-        message.innerText = "Thank you. You have sent a message";
-        formElement.appendChild(message);
+        message.innerText = "Thank you. You have sent a message.";
+        sectionTitle.insertAdjacentElement('afterend', message);
     }
+
 }
 
 
