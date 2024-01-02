@@ -248,6 +248,18 @@ header .student-container {
 
 }
 
+.error-message, .error-empty {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
 /* tablet view */
 @media (min-width: 768px) {
 

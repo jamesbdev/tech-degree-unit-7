@@ -68,19 +68,64 @@ new Chart(mobileUser, {
 //adds success message when user submits form
 
 const submitBtn = document.querySelector('#submit-btn');
+let validation = false;
 
-submitBtn.addEventListener('click', (event)=> {
-    event.preventDefault();
+const addValidation = () => {
+    const inputValue = document.querySelector('#user-search').value;
+    const formElement = document.querySelector('#message-form');
+    const errorElement = document.querySelector('.error-message');
+    const errorEmpty = document.querySelector('.error-empty');
+    const textArea = document.querySelector('#message').value;
+
+
+ if (inputValue == '') {
+    const errorMessage = document.createElement('p');
+    errorMessage.innerText = "Error: Please select a user";
+    errorMessage.classList.add('error-message');
+    //check if error message already exists
+    if (errorElement == null) {
+        //append to DOM if it doesn't exist
+        formElement.appendChild(errorMessage);
+    }
+ } else if (textArea == '') {
+        const errorMessage = document.createElement('p');
+        errorMessage.innerText = "Error: Please enter a message";
+        errorMessage.classList.add('error-empty');
+        //check if error message already exists
+        if (errorEmpty == null) {
+            //append to DOM if it doesn't exist
+            formElement.appendChild(errorMessage);
+        }
+    }
+
+}
+
+const addSuccessMsg = () => {
     const message = document.createElement('p');
     message.classList.add('success-message');
     const successMessage = document.querySelector('.success-message');
     const formElement = document.querySelector('#message-form');
+    const errorMessage = document.querySelector('.error-message');
+    const errorEmpty = document.querySelector('.error-empty');
+
     //checks if success message already exists
-    if (successMessage == null) {
+    if (successMessage == null && errorMessage == null && errorEmpty == null) {
         message.innerText = "Thank you. You have sent a message";
         formElement.appendChild(message);
     }
+}
+
+
+submitBtn.addEventListener('click', (event)=> {
+    //stop form from submitting
+    event.preventDefault();
+    addValidation();
+    addSuccessMsg();
+
 })
+
+
+
 
 
 
