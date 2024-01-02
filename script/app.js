@@ -65,5 +65,24 @@ new Chart(mobileUser, {
 
 
 
+//adds success message when user submits form
+
+const submitBtn = document.querySelector('#submit-btn');
+
+submitBtn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    const message = document.createElement('p');
+    message.classList.add('success-message');
+    const successMessage = document.querySelector('.success-message');
+    const formElement = document.querySelector('#message-form');
+    //checks if success message already exists
+    if (successMessage == null) {
+        message.innerText = "Thank you. You have sent a message";
+        formElement.appendChild(message);
+    }
+})
+
+
+
 
 

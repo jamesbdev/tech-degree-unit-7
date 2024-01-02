@@ -239,7 +239,14 @@ header .student-container {
   display: none;
 }
 
+/****** message user form ******/
 
+.message-user form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
 
 /* tablet view */
 @media (min-width: 768px) {
