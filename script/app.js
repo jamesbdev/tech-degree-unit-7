@@ -77,7 +77,13 @@ const addValidation = () => {
     const errorEmpty = document.querySelector('.error-empty');
     const textArea = document.querySelector('#message').value;
 
-
+ //remove previous messages
+    if (errorElement) {
+        errorElement.remove();
+    } else if (errorEmpty) {
+        errorEmpty.remove();
+    }
+    
  if (inputValue == '') {
     const errorMessage = document.createElement('p');
     errorMessage.innerText = "Error: Please select a user";
