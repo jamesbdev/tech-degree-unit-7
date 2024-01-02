@@ -154,6 +154,10 @@ header .student-container {
     flex-direction: column;
 }
 
+.social-stats {
+    margin-bottom: 1.5rem;
+}
+
 .social-child {
     display: flex;
     padding: 1rem;
@@ -244,13 +248,12 @@ header .student-container {
         display: flex;
         justify-content: flex-start;
         width: 100%;
-        /* max-width: 100%; */
+  
     }
 
     .graph-container section {
         flex-grow: 1;
         border-top: 1px solid #9d9898;
-        /* padding: 0.5rem; */
     }
 
     .social-container {
@@ -312,6 +315,13 @@ header .student-container {
         display: inline;
     }
 
+    .mobile-users {
+        border-left: 1px solid #c8c2c2;
+        border-bottom: 1px solid #c8c2c2;
+        padding-left: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
 
 }
 
@@ -320,5 +330,19 @@ header .student-container {
 
 @media (min-width: 1024px) {
 
+    .members-section {
+        display: flex;
+        gap: 1rem;
+        border-top: 1px solid #c8c2c2;
+    }
+
+    .members-section section {
+        flex-grow: 1;
+        padding: 1rem;
+    }
+
+    .members-section section:first-child {
+        border-right: 1px solid #c8c2c2;
+    }
 
 }
