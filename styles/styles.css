@@ -301,19 +301,27 @@ form input::placeholder, form textarea::placeholder {
     flex-grow: 1;
 }
 
+.toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* toggle switch */
 .settings-container .toggle {
     -webkit-appearance: none;
     position: relative;
-    width: 50px;
-    height: 30px;
+    width: 70px;
+    height: 25px;
     border-radius: 25px;
     background-color: #ccc;
     transition: background .3s;
     outline: none;
     cursor: pointer;
+    border: 2px solid #c8c2c2;
 }
 
-.settings-container .toggle::after { 
+.settings-container .toggle::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -322,13 +330,14 @@ form input::placeholder, form textarea::placeholder {
     border-radius: 50%;
     height: 1.25rem;
     width: 1.25rem;
+    border: 2px solid #c8c2c2;
     background-color: white;
     transition: left .3s;
 }
 
 .settings-container .toggle:checked {
     background-color: var(--main-bg-color);
-   
+    content: 'on';
 }
 
 .settings-container .toggle:checked::after {

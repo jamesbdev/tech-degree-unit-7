@@ -219,17 +219,21 @@
             <h3>Settings</h3>
             <form action="
             " class="settings-container">
-                <div>
+                <div class="toggle-container">
                     <label for="email-notification">Send email notifications</label>
                     <input type="checkbox" name="email-notification" id="email-notification" class="toggle">
              
                 </div> 
-                <div>
+                <div class="toggle-container">
                     <label for="profile">Set profile to Public</label>
                     <input type="checkbox" name="profile" id="profile" class="toggle">
                 </div>
-                <select name="timezone" id="timezone">
+                <select name="timezone" id="timezone" class="timezone-select">
                     <option value="">Select timezone</option>
+                    <option value="UTC">UTC</option>
+                    <option value="GMT">GMT</option>
+                    <option value="EST">EST</option>
+                    <option value="CST">CST</option>
                 </select>
                 <div class="button-container">
                     <button type="submit">Save</button>
