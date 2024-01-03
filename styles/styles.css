@@ -370,6 +370,24 @@ form input::placeholder, form textarea::placeholder {
     appearance:none;
 }
 
+.save-btn, .cancel-btn {
+    padding: 0.8rem;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 300;
+}
+
+.save-btn {
+    background-color: var(--main-bg-color);
+}
+
+.cancel-btn {
+    background-color: #c8c2c2;
+
+}
+
 /* tablet view */
 @media (min-width: 768px) {
 
