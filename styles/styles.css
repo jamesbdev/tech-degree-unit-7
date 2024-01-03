@@ -19,6 +19,7 @@ body {
 
 main {
     margin: 0 .5rem;
+    display: grid;
 }
 
 /** header **/ 
@@ -311,7 +312,7 @@ form input::placeholder, form textarea::placeholder {
 .settings-container .toggle {
     -webkit-appearance: none;
     position: relative;
-    width: 70px;
+    width: 77px;
     height: 25px;
     border-radius: 25px;
     background-color: #ccc;
@@ -325,7 +326,7 @@ form input::placeholder, form textarea::placeholder {
     content: '';
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 20%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     height: 1.25rem;
@@ -341,7 +342,7 @@ form input::placeholder, form textarea::placeholder {
 }
 
 .settings-container .toggle:checked::after {
-    left: 70%;
+    left: 80%;
 }
 
 .select-wrapper {
@@ -469,6 +470,15 @@ form input::placeholder, form textarea::placeholder {
         padding-bottom: 0.8rem;
     }
 
+    .toggle-container {
+       justify-content: flex-start;
+       gap: 1rem;
+    }
+
+    .toggle-container label {
+        flex-basis: 220px;
+    }
+
 
 }
 
@@ -476,6 +486,8 @@ form input::placeholder, form textarea::placeholder {
 /* desktop view */ 
 
 @media (min-width: 1024px) {
+
+
 
     .members-section {
         display: flex;
@@ -490,6 +502,15 @@ form input::placeholder, form textarea::placeholder {
 
     .members-section section:first-child {
         border-right: 1px solid #c8c2c2;
+    }
+
+    .user-container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .user-container section {
+        flex-grow: 1
     }
 
 }
