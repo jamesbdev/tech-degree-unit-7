@@ -344,6 +344,32 @@ form input::placeholder, form textarea::placeholder {
     left: 70%;
 }
 
+.select-wrapper {
+   position: relative;
+   display: inline-block;
+}
+
+.select-wrapper::after {
+    content: '▼';
+    color: var(--main-bg-color);
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    pointer-events: none;
+}
+
+.settings-container select {
+    padding: 0.8rem;
+    width: 100%;
+    background-color: #efefef;
+    border: 1px solid #c8c2c2;
+    border-radius: 5px;
+    color: #c8c2c2;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
 /* tablet view */
 @media (min-width: 768px) {
 
