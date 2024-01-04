@@ -123,7 +123,7 @@ header .student-container {
 
 /* Graph */ 
 
-/* make these containers full width on mobile */
+/* make containers full width on mobile */
 .traffic-chart, .daily-traffic, .mobile-users {
     width: 95vw;
 }
@@ -292,12 +292,13 @@ form input::placeholder, form textarea::placeholder {
 
 /***** settings widget *****/
 
-.settings-container {
+.settings-section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     position: relative;
-    justify-content: space-around;
+    justify-content: flex-start;
+
 }
 
 .settings-section {
@@ -307,7 +308,6 @@ form input::placeholder, form textarea::placeholder {
 .button-container {
     display: flex;
     gap: 0.5rem;
-    margin-top: auto;
     bottom: 0;
 }
 .button-container button {
@@ -321,7 +321,7 @@ form input::placeholder, form textarea::placeholder {
 }
 
 /* toggle switch */
-.settings-container .toggle {
+.settings-section .toggle {
     -webkit-appearance: none;
     position: relative;
     width: 77px;
@@ -334,7 +334,7 @@ form input::placeholder, form textarea::placeholder {
     border: 2px solid #c8c2c2;
 }
 
-.settings-container .toggle::after {
+.settings-section .toggle::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -348,18 +348,19 @@ form input::placeholder, form textarea::placeholder {
     transition: left .3s;
 }
 
-.settings-container .toggle:checked {
+.settings-section .toggle:checked {
     background-color: var(--main-bg-color);
     content: 'on';
 }
 
-.settings-container .toggle:checked::after {
+.settings-section .toggle:checked::after {
     left: 80%;
 }
 
 .select-wrapper {
    position: relative;
    display: inline-block;
+   margin-top: auto;
 }
 
 .select-wrapper::after {
@@ -371,7 +372,7 @@ form input::placeholder, form textarea::placeholder {
     pointer-events: none;
 }
 
-.settings-container select {
+.settings-section select {
     padding: 0.8rem;
     width: 100%;
     background-color: #efefef;
@@ -465,7 +466,7 @@ form input::placeholder, form textarea::placeholder {
             'header header header'
             'main-nav main main'
             'main-nav main main';
-        grid-template-columns: 10vw 1fr 1fr;
+        /* grid-template-columns: 10vw 1fr 1fr; */
     }
 
     header {
@@ -474,7 +475,7 @@ form input::placeholder, form textarea::placeholder {
 
     .main-nav {
         grid-area: main-nav;
-        padding: 1rem .5rem;
+        padding: 1rem 1rem;
         height: 100%;
     }
 
@@ -590,6 +591,10 @@ form input::placeholder, form textarea::placeholder {
 
     .members-main {
         border-right: 1px solid #c8c2c2;
+    }
+
+    .toggle-container {
+        font-size: 15px;
     }
 
 
