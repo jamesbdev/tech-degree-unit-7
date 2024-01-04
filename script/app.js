@@ -51,33 +51,68 @@ new Chart(trafficChart, {
 
 //Daily traffic chart
 
+
+const dailyData = {
+    labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+    datasets: [{
+        label: 'Number of views',
+        data: [100, 200, 250, 150, 300, 450, 200],
+        borderWidth: 1,
+        backgroundColor: '#9b86dc'
+    }]
+}
+
+const dailyOptions = {
+    aspectRatio: 2,
+    scales: {
+    y: {
+        beginAtZero: true
+    },
+},
+  plugins: {
+    legend: {
+        display: false
+    }
+  }
+}
+
 new Chart(dailyTraffic, {
     type: 'bar',
-    data: {
-        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        datasets: [{
-            label: 'Number of views',
-            data: [100, 200, 250, 150, 300, 450, 200],
-            borderWidth: 1,
-            backgroundColor: '#9b86dc'
-        }]
-    }
-})
+    data: dailyData,
+    options: dailyOptions
+
+}); 
 
 
 //mobile user chart
 
+const mobileData = {
+    labels: ['Desktop', 'Tablet', 'Phones'],
+    datasets: [{
+        label: 'Number of views',
+        data: [100, 200, 300],
+        borderWidth: 1,
+        backgroundColor: ['#9b86dc', '#78CF82', '#51BCC8']
+    }]
+}
+
+const mobileOptions = {
+    aspectRatio: 1.9,
+    plugins: {
+        legend: {
+            position: 'right',
+            labels: {
+                boxWidth: 20,
+                fontStyle: 'bold'
+            }
+        }
+    }
+}
+
 new Chart(mobileUser, {
     type: 'doughnut',
-    data: {
-        labels: ['Desktop', 'Tablet', 'Phones'],
-        datasets: [{
-            label: 'Number of views',
-            data: [100, 200, 300],
-            borderWidth: 1,
-            backgroundColor: ['#9b86dc', 'mediumseagreen', 'darkturquoise']
-        }]
-    }
+    data: mobileData,
+    options: mobileOptions
 })
 
 

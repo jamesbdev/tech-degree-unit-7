@@ -36,22 +36,22 @@
     <nav class="main-nav">
       <ul>
         <li>
-          <a href="#"
+          <a href="#home"
             ><img src="svgs/home.svg" alt="home icon" height="40"
           /></a>
         </li>
         <li>
-          <a href="#"
+          <a href="#bar-chart"
             ><img src="svgs/bar-chart.svg" alt="home icon" height="40"
           /></a>
         </li>
         <li>
-          <a href="#"
+          <a href="#members"
             ><img src="svgs/members.svg" alt="home icon" height="40"
           /></a>
         </li>
         <li>
-          <a href="#"
+          <a href="#settings"
             ><img src="svgs/settings.svg" alt="home icon" height="40"
           /></a>
         </li>
@@ -60,7 +60,7 @@
     <!--grid container-->
     <main>
       <!--dashboard section-->
-      <section class="dashboard-container">
+      <section class="dashboard-container" id="home">
         <h3>Dashboard</h3>
         <div class="alert">
           <p>Alert: you have unread messages</p>
@@ -68,7 +68,7 @@
         </div>
       </section>
       <!--traffic chart (full width)-->
-      <section class="traffic-chart">
+      <section class="traffic-chart" id="bar-chart">
         <h3>Traffic</h3>
         <!--traffic chart navigation-->
         <nav class="graph-nav">
@@ -152,7 +152,7 @@
         </div>
       </section>
       <!--new members (half width tablet up)-->
-      <section class="new-members">
+      <section class="new-members" id="members">
         <h3>New Members</h3>
         <div class="members-main">
           <div class="members-individual">
@@ -309,8 +309,8 @@
           <button type="submit" id="submit-btn" class="submit-btn">Send</button>
         </form>
       </section>
-      <!--settings (half width tablet up)-->
-      <section class="settings-section">
+      <!--settings (half width desktop up)-->
+      <section class="settings-section" id="settings">
         <h3>Settings</h3>
         <form
           action="
