@@ -11,6 +11,8 @@ h3 {
     font-size: 0.9rem;
 }
 
+
+
 /* mobile view */
 body {
     font-family: 'Open Sans', sans-serif;
@@ -119,6 +121,11 @@ header .student-container {
 }
 
 /* Graph */ 
+
+/* make these containers full width on mobile */
+.traffic-chart, .daily-traffic, .mobile-users {
+    width: 95vw;
+}
 
 .traffic-chart {
     margin-bottom: 1.5rem;
@@ -392,6 +399,27 @@ form input::placeholder, form textarea::placeholder {
 /* tablet view */
 @media (min-width: 768px) {
 
+    .daily-traffic, .mobile-users, .message-user, .settings-section, .recent-activity {
+      width: 45vw;
+    }
+    
+    /* full width elements */
+    .traffic-chart, .social-stats, .dashboard-container {
+       grid-column: 1 / span 2;
+       width: 90vw;
+    }
+
+    /* half width elements */
+
+    .daily-traffic, .new-members, .message-user {
+        grid-column: 1 / span 1;
+    }
+
+    .settings-section, .recent-activity, .mobile-users {
+        grid-column: 2 / span 1;
+    }
+
+
     .graph-container {
         display: flex;
         justify-content: flex-start;
@@ -436,6 +464,7 @@ form input::placeholder, form textarea::placeholder {
 
     main {
         grid-area: main;
+        grid-template-columns: 50%;
     }
 
     .graph-nav ul {
@@ -468,6 +497,7 @@ form input::placeholder, form textarea::placeholder {
         border-bottom: 1px solid #c8c2c2;
         padding-left: 0.8rem;
         padding-bottom: 0.8rem;
+        border-top: 1px solid #c8c2c2;
     }
 
     .toggle-container {
@@ -487,7 +517,9 @@ form input::placeholder, form textarea::placeholder {
 
 @media (min-width: 1024px) {
 
-
+  main {
+    grid-template-columns: 1fr;
+  }
 
     .members-section {
         display: flex;
