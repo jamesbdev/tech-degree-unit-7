@@ -14,22 +14,39 @@ const trafficChart = document.querySelector('#traffic-chart');
 const dailyTraffic = document.querySelector('#daily-traffic');
 const mobileUser = document.querySelector('#mobile-user');
 
+
+let trafficData = {
+    labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
+    datasets: [{
+      data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1,
+    }]
+}
+
+let trafficOptions = {
+    backgroundColor: 'rgba(112, 104, 201, .5)',
+    fill: true,
+    aspectRatio: 2.5,
+    animation: {
+        duration: 0
+    },
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
+    plugins: {
+        legend: {
+            display: false
+        }
+    }
+}
 //traffic chart
 new Chart(trafficChart, {
     type: 'line',
-    data: {
-        labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
-        datasets: [{
-            label: 'Number of views',
-            data: [500, 1200, 1500, 1000, 1200, 800, 900, 450, 200, 430],
-            borderWidth: 1,
-            borderColor: '#9b86dc',
-            backgroundColor: '#9b86dc',
-            color: '#9b86dc',
-            fill: true,
-            borderJoinStyle: 'round'
-        }]
-    }
+    data: trafficData,
+    options: trafficOptions
 })
 
 //Daily traffic chart
