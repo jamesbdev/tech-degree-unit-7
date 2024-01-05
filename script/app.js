@@ -191,6 +191,7 @@ const bellIcon = document.querySelector('.bell-container');
 
 const closeModal = () => {
     const closeIcon = document.querySelector('.alert-modal .close-icon');
+    //add event listener to close icon
     closeIcon.addEventListener('click', () => {
         const alertModal = document.querySelector('.alert-modal');
         alertModal.remove();
