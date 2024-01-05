@@ -185,6 +185,42 @@ submitBtn.addEventListener('click', (event)=> {
 
 })
 
+//display extra pop up when user clicks the bell icon
+
+const bellIcon = document.querySelector('.bell-container');
+
+const closeModal = () => {
+    const closeIcon = document.querySelector('.alert-modal .close-icon');
+    closeIcon.addEventListener('click', () => {
+        const alertModal = document.querySelector('.alert-modal');
+        alertModal.remove();
+    })
+}
+
+const addModal = () => {
+    //create a modal
+    const alertModal = document.createElement('div');
+    //add text content
+    alertModal.innerHTML = "<p>You have 6 unread messages</p>";
+    //add classes
+    alertModal.classList.add('alert-modal');
+    //create close icon
+    const closeIcon = document.createElement('span');
+    closeIcon.innerText = 'X';
+    closeIcon.classList.add('close-icon');
+    //append close icon
+    alertModal.appendChild(closeIcon);
+    //get the main element
+    const container = document.querySelector('.main');
+    //append modal to main element
+    container.appendChild(alertModal);
+}
+
+bellIcon.addEventListener('click', () => {
+  addModal();
+  closeModal();
+})
+
 
 
 

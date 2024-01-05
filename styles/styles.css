@@ -18,6 +18,22 @@ h3 {
 }
 
 
+/***** alert modal *****/ 
+
+.alert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--main-bg-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-radius: 5px;
+}
 
 /* mobile view */
 body {
