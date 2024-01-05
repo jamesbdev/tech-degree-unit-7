@@ -4,6 +4,8 @@
     --main-bg-color: #9b86dc;
     --bg-color-dark: #432e7fd6;
     --text-color: #fff;
+    --border-grey: #c8c2c2;
+    --light-grey: #efefef;
   }
 
 h3 {
@@ -58,7 +60,7 @@ header h2 {
 
 header .student-container {
     display: flex;
-    border-left: 1px solid #c8c2c2;
+    border-left: 1px solid var(--border-grey);
     padding-left: 0.5rem;
     align-items: center;
     gap: .7rem;
@@ -152,10 +154,10 @@ header .student-container {
 }
 
 .daily-traffic {
-    border-top: 1px solid #c8c2c2;
-    border-bottom: 1px solid #c8c2c2;
+    border-top: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--border-grey);
     margin-left: 0;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 /* social stats widget */
@@ -166,14 +168,15 @@ header .student-container {
 }
 
 .social-stats {
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    padding-bottom: 1.5rem;
 }
 
 .social-child {
     display: flex;
     padding: 1rem;
     background-color: #efefef;
-    border: 1px solid #c8c2c2;
+    border: 1px solid var(--border-grey);
     border-radius: 10px;
     margin: 0.5rem;
     gap: 1rem;
@@ -214,7 +217,6 @@ header .student-container {
 .members-main {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #c8c2c2;
 }
 
 .members-individual {
@@ -222,7 +224,7 @@ header .student-container {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border-bottom: 1px solid #c8c2c2;
+    border-bottom: 1px solid var(--border-grey);
     padding: 1rem;
     font-size: 14px;
 }
@@ -282,12 +284,12 @@ header .student-container {
 form input, form textarea {
     border-radius: 5px;
     padding: 0.8rem;
-    border: 1px solid #c8c2c2;
+    border: 1px solid var(--border-grey);
     background-color: #efefef;
 }
 
 form input::placeholder, form textarea::placeholder {
-    color: #c8c2c2;
+    color: var(--border-grey);
 }
 
 /***** settings widget *****/
@@ -331,7 +333,7 @@ form input::placeholder, form textarea::placeholder {
     transition: background .3s;
     outline: none;
     cursor: pointer;
-    border: 2px solid #c8c2c2;
+    border: 2px solid var(--border-grey);
 }
 
 .settings-section .toggle::after {
@@ -343,7 +345,7 @@ form input::placeholder, form textarea::placeholder {
     border-radius: 50%;
     height: 1.25rem;
     width: 1.25rem;
-    border: 2px solid #c8c2c2;
+    border: 2px solid var(--border-grey);
     background-color: white;
     transition: left .3s;
 }
@@ -376,9 +378,9 @@ form input::placeholder, form textarea::placeholder {
     padding: 0.8rem;
     width: 100%;
     background-color: #efefef;
-    border: 1px solid #c8c2c2;
+    border: 1px solid var(--border-grey);
     border-radius: 5px;
-    color: #c8c2c2;
+    color: var(--border-grey);
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
@@ -398,7 +400,7 @@ form input::placeholder, form textarea::placeholder {
 }
 
 .cancel-btn {
-    background-color: #c8c2c2;
+    background-color: var(--border-grey);
 
 }
 
@@ -448,6 +450,15 @@ form input::placeholder, form textarea::placeholder {
         border-top: 1px solid #9d9898;
     }
 
+    .daily-traffic .width-container {
+        /* width: 90%; */
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 74%;
+    }
+
     .social-container {
         flex-direction: row;
     }
@@ -466,7 +477,6 @@ form input::placeholder, form textarea::placeholder {
             'header header header'
             'main-nav main main'
             'main-nav main main';
-        /* grid-template-columns: 10vw 1fr 1fr; */
     }
 
     header {
@@ -512,11 +522,11 @@ form input::placeholder, form textarea::placeholder {
     }
 
     .mobile-users {
-        border-left: 1px solid #c8c2c2;
-        border-bottom: 1px solid #c8c2c2;
+        border-left: 1px solid var(--border-grey);
+        border-bottom: 1px solid var(--border-grey);
         padding-left: 0.8rem;
         padding-bottom: 0.8rem;
-        border-top: 1px solid #c8c2c2;
+        border-top: 1px solid var(--border-grey);
     }
 
     .toggle-container {
@@ -535,15 +545,10 @@ form input::placeholder, form textarea::placeholder {
 /* desktop view */ 
 
 @media (min-width: 1024px) {
-
-  main {
-    grid-template-columns: 1fr;
-  }
-
     .members-section {
         display: flex;
         gap: 1rem;
-        border-top: 1px solid #c8c2c2;
+        border-top: 1px solid var(--border-grey);
     }
 
     .members-section section {
@@ -552,7 +557,7 @@ form input::placeholder, form textarea::placeholder {
     }
 
     .members-section section:first-child {
-        border-right: 1px solid #c8c2c2;
+        border-right: 1px solid var(--border-grey);
     }
 
     .user-container {
@@ -583,6 +588,7 @@ form input::placeholder, form textarea::placeholder {
 
     .settings-section {
         margin-top: 0;
+        /* padding-left: 10px; */
     }
 
     .members-individual {
@@ -590,11 +596,33 @@ form input::placeholder, form textarea::placeholder {
     }
 
     .members-main {
-        border-right: 1px solid #c8c2c2;
+        border-right: 1px solid var(--border-grey);
+    }
+
+    .recent-activity .members-main {
+        border-right: none;
     }
 
     .toggle-container {
         font-size: 15px;
+    }
+
+    .message-user {
+        border-right: 1px solid var(--border-grey);
+    }
+
+    .message-user form {
+        /* width: 90%; */
+        margin: 0 auto;
+    }
+
+    .form-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .social-stats {
+        border-bottom: 1px solid var(--border-grey);
     }
 
 
