@@ -220,6 +220,8 @@ const addModal = () => {
 bellIcon.addEventListener('click', () => {
   addModal();
   closeModal();
+  //display the initial banner alert
+  alertModal.style.display = 'block';
 })
 
 
