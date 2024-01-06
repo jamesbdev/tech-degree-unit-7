@@ -43,10 +43,41 @@ let trafficOptions = {
     }
 }
 //traffic chart
-new Chart(trafficChart, {
+
+const trafficChartInstance = new Chart(trafficChart, {
     type: 'line',
     data: trafficData,
     options: trafficOptions
+});
+
+//change chart data when user clicks on different timeframes 
+
+const trafficNav = document.querySelector('.graph-nav');
+const dailyBtn = document.querySelector('#daily');
+const liItems = document.querySelectorAll('.traffic-nav li');
+const activeElement = document.querySelector('.active');
+
+
+
+trafficNav.addEventListener('click', (element) => {
+    //remove active class from the other buttons
+    activeElement.classList.remove('active');
+
+    element.target.classList.add('active');
+    //add new data
+    let newtrafficData = {
+    labels: ["S", "M", "T","W", "T", "F", "S"],
+    datasets: [{
+      data: [200, 250, 300, 270, 250, 320, 300],
+      backgroundColor: 'rgba(116, 119, 191, .3)',
+      borderWidth: 1,
+    }]
+    }
+    //replace data
+    trafficChartInstance.data = newtrafficData
+
+    //update the chart
+    trafficChartInstance.update();
 })
 
 //Daily traffic chart
@@ -114,6 +145,8 @@ new Chart(mobileUser, {
     data: mobileData,
     options: mobileOptions
 })
+
+
 
 
 
@@ -198,13 +231,31 @@ const closeModal = () => {
     })
 }
 
-const addModal = () => {
+const addModal = (message, message2, message3) => {
     //create a modal
     const alertModal = document.createElement('div');
-    //add text content
-    alertModal.innerHTML = "<p>You have 6 unread messages</p>";
     //add classes
     alertModal.classList.add('alert-modal');
+    //create notifications
+    const alert = document.createElement('li');
+    const alert2 = document.createElement('li');
+    const alert3 = document.createElement('li');
+    //add classes
+    alert.classList.add('notification');
+    alert2.classList.add('notification');
+    alert3.classList.add('notification');
+    //create list element
+    const list = document.createElement('ul');
+    //add text content
+    alert.innerText = message;
+    alert2.innerText = message2;  
+    alert3.innerText = message3;
+    //append list to DOM  
+    alertModal.appendChild(list);
+    //append notifications to list
+    list.appendChild(alert);
+    list.appendChild(alert2);
+    list.appendChild(alert3);
     //create close icon
     const closeIcon = document.createElement('span');
     closeIcon.innerText = 'X';
@@ -218,7 +269,7 @@ const addModal = () => {
 }
 
 bellIcon.addEventListener('click', () => {
-  addModal();
+  addModal("You have 6 unread messages", "Your settings have been saved", "The mobile chart was recently updated");
   closeModal();
   //display the initial banner alert
   alertModal.style.display = 'block';
