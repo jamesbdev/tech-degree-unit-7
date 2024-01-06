@@ -57,14 +57,7 @@ const dailyBtn = document.querySelector('#daily');
 const liItems = document.querySelectorAll('.traffic-nav li');
 const activeElement = document.querySelector('.active');
 
-
-
-trafficNav.addEventListener('click', (element) => {
-    //remove active class from the other buttons
-    activeElement.classList.remove('active');
-
-    element.target.classList.add('active');
-    //add new data
+const updateTrafficChart = () => {
     let newtrafficData = {
     labels: ["S", "M", "T","W", "T", "F", "S"],
     datasets: [{
@@ -78,6 +71,50 @@ trafficNav.addEventListener('click', (element) => {
 
     //update the chart
     trafficChartInstance.update();
+}
+
+trafficNav.addEventListener('click', (element) => {
+    //remove active class from the other buttons
+    activeElement.classList.remove('active');
+
+    element.target.classList.add('active');
+    //update the chart data
+    if (element.target.innerText == 'Daily') {
+    updateTrafficChart();
+    } else if (element.target.innerText == 'Weekly') {
+        let trafficData = {
+            labels: ["Week 1", "Week 2", "Week 3","Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+            datasets: [{
+              data: [400, 800, 450, 600, 650, 500, 1000, 800],
+              backgroundColor: 'rgba(116, 119, 191, .3)',
+              borderWidth: 1,
+            }]
+        }
+        trafficChartInstance.data = trafficData;
+        trafficChartInstance.update();
+    } else if (element.target.innerText == 'Monthly') {
+        let trafficData = {
+            labels: ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug"],
+            datasets: [{
+              data: [1000, 1500, 1250, 1750, 2000, 1500, 1750, 1250],
+              backgroundColor: 'rgba(116, 119, 191, .3)',
+              borderWidth: 1,
+            }]
+        }
+        trafficChartInstance.data = trafficData;
+        trafficChartInstance.update();
+    } else if (element.target.innerText == 'Hourly') {
+        let trafficData = {
+            labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
+            datasets: [{
+              data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850],
+              backgroundColor: 'rgba(116, 119, 191, .3)',
+              borderWidth: 1,
+            }]
+        }
+        trafficChartInstance.data = trafficData;
+        trafficChartInstance.update();
+    }
 })
 
 //Daily traffic chart
