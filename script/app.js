@@ -55,34 +55,41 @@ const trafficChartInstance = new Chart(trafficChart, {
 const trafficNav = document.querySelector('.graph-nav');
 const dailyBtn = document.querySelector('#daily');
 const liItems = document.querySelectorAll('.traffic-nav li');
-const activeElement = document.querySelector('.active');
+let activeElement = document.querySelector('.active');
 
-const updateTrafficChart = () => {
-    let newtrafficData = {
-    labels: ["S", "M", "T","W", "T", "F", "S"],
-    datasets: [{
-      data: [200, 250, 300, 270, 250, 320, 300],
-      backgroundColor: 'rgba(116, 119, 191, .3)',
-      borderWidth: 1,
-    }]
-    }
-    //replace data
-    trafficChartInstance.data = newtrafficData
-
-    //update the chart
+//updates the chart data
+const updateTrafficChart = (newData) => {
+    trafficChartInstance.data = newData;
     trafficChartInstance.update();
+ 
 }
 
-trafficNav.addEventListener('click', (element) => {
-    //remove active class from the other buttons
-    activeElement.classList.remove('active');
+const updateActiveClass = (e) => {
+    if (activeElement) {
+       activeElement.classList.remove('active');
+    }
+    e.target.classList.add('active');
 
-    element.target.classList.add('active');
-    //update the chart data
-    if (element.target.innerText == 'Daily') {
-    updateTrafficChart();
-    } else if (element.target.innerText == 'Weekly') {
-        let trafficData = {
+    activeElement = e.target;
+}
+
+
+trafficNav.addEventListener('click', (event) => {
+    //remove active class from previous element
+    updateActiveClass(event);
+
+    if (event.target.innerText == 'Daily') {
+        let newData = {
+            labels: ["S", "M", "T","W", "T", "F", "S"],
+            datasets: [{
+              data: [200, 250, 300, 270, 250, 320, 300],
+              backgroundColor: 'rgba(116, 119, 191, .3)',
+              borderWidth: 1,
+            }]
+        }
+        updateTrafficChart(newData);  
+    } else if (event.target.innerText == 'Weekly') {
+        let newData = {
             labels: ["Week 1", "Week 2", "Week 3","Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
             datasets: [{
               data: [400, 800, 450, 600, 650, 500, 1000, 800],
@@ -90,10 +97,10 @@ trafficNav.addEventListener('click', (element) => {
               borderWidth: 1,
             }]
         }
-        trafficChartInstance.data = trafficData;
-        trafficChartInstance.update();
-    } else if (element.target.innerText == 'Monthly') {
-        let trafficData = {
+        updateTrafficChart(newData);  
+  
+    } else if (event.target.innerText == 'Monthly') {
+        let newData = {
             labels: ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug"],
             datasets: [{
               data: [1000, 1500, 1250, 1750, 2000, 1500, 1750, 1250],
@@ -101,10 +108,9 @@ trafficNav.addEventListener('click', (element) => {
               borderWidth: 1,
             }]
         }
-        trafficChartInstance.data = trafficData;
-        trafficChartInstance.update();
-    } else if (element.target.innerText == 'Hourly') {
-        let trafficData = {
+        updateTrafficChart(newData);  
+    } else if (event.target.innerText == 'Hourly') {
+        let newData = {
             labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
             datasets: [{
               data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850],
@@ -112,8 +118,7 @@ trafficNav.addEventListener('click', (element) => {
               borderWidth: 1,
             }]
         }
-        trafficChartInstance.data = trafficData;
-        trafficChartInstance.update();
+        updateTrafficChart(newData);  
     }
 })
 
@@ -182,9 +187,6 @@ new Chart(mobileUser, {
     data: mobileData,
     options: mobileOptions
 })
-
-
-
 
 
 //adds success message when user submits form

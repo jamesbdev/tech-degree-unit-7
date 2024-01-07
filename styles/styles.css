@@ -176,10 +176,14 @@ header .student-container {
 
 }
 
+.graph-nav ul li {
+    padding: .5rem;
+}
+
 .graph-nav ul li.active {
     background: lightgreen;
     border-radius: 10px;
-    padding: .7rem;
+
 }
 
 .graph-nav ul li {
