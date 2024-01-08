@@ -323,6 +323,7 @@ form input, form textarea {
     padding: 0.8rem;
     border: 1px solid var(--border-grey);
     background-color: #efefef;
+    width: 100%;
 }
 
 form input::placeholder, form textarea::placeholder {
@@ -439,6 +440,68 @@ form input::placeholder, form textarea::placeholder {
 .cancel-btn {
     background-color: var(--border-grey);
 
+}
+
+.auto-complete {
+    background-color: #ccc;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+
+}
+
+.user-information p {
+    margin: 0;
+}
+
+.user-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auto-complete ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    height: 7rem;
+    overflow-y: scroll;
+}
+
+.auto-complete ul li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.auto-complete ul::-webkit-scrollbar {
+    width: 5px;
+    background-color: #c8c2c2;
+    border-radius: 25px;
+}
+
+.auto-complete ul::-webkit-scrollbar-thumb {
+    background-color: #9b86dc;
+    border-radius: 25px;
+}
+
+.auto-complete ul li:hover {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+.auto-complete ul li img {
+    height: 45px;
+    border-radius: 50%;
 }
 
 /* tablet view */

@@ -315,6 +315,77 @@ bellIcon.addEventListener('click', () => {
 })
 
 
+//autocomplete search
+
+const searchInput = document.querySelector('#user-search');
+const list = document.querySelector('.autocomplete-list');
+const autoComplete = document.querySelector('.auto-complete');
+const userData = [{
+    name: 'Victoria Chambers',
+    image: 'images/member-1.jpg',
+    email: 'victoria.chambers80@example.com'
+},
+{
+    name: 'Dale Byrd',
+    image: 'images/member-2.jpg',
+    email: 'dale.byrd52@example.com'
+},
+{
+    name: 'Dawn Wood',
+    image: 'images/member-3.jpg',
+    email: 'dawn.wood16@example.com'
+},
+{
+    name: 'Dan Oliver',
+    image: 'images/member-4.jpg',
+    email: 'dan.oliver82@example.com'
+}];
+
+const showList = (e) => {
+     //store the value of the input
+    const value = e.target.value.toLowerCase();
+    if (value == '') {
+      autoComplete.classList.add('hide');
+      autoComplete.classList.remove('show');
+    } else {
+      autoComplete.classList.add('show');
+      autoComplete.classList.remove('hide');
+    }
+}
+
+//add an event listener when typing inside the input 
+searchInput.addEventListener('keyup', (event) => {
+//empty the list when the input is empty 
+  showList(event);
+  const value = event.target.value.toLowerCase();
+  //add list item that matches the search input value 
+  //loop through the userData array
+  for (let i = 0; i < userData.length; i++) {
+    let userName = userData[i].name.toLowerCase();
+    //check if the user name matches with the search input value 
+   if (userName.includes(value)) {
+      //create a list item
+      const listItem = document.createElement('li');
+      //add class to list item
+      listItem.classList.add('list-item');
+      //add the HTML needed in the list item
+      listItem.innerHTML =  `
+      <img src="${userData[i].image}" alt="${userData.name}">
+      <div class="user-information">
+        <p class="user-name">${userData[i].name}</p>
+        <p class="user-email">${userData[i].email}</p>
+      </div>
+      `;
+      //add list item to DOM
+      list.appendChild(listItem);
+   } else {
+     console.log('does not match');
+   }
+}
+})
+
+
+
 
 
 

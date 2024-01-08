@@ -260,7 +260,7 @@
             <div>
               <img
                 src="images/member-3.jpg"
-                alt="Dale Byrd"
+                alt="Dawn Wood"
                 class="member-profile"
               />
             </div>
@@ -277,7 +277,7 @@
             <div>
               <img
                 src="images/member-4.jpg"
-                alt="Dale Byrd"
+                alt="Dan Oliver"
                 class="member-profile"
               />
             </div>
@@ -294,12 +294,18 @@
         <div class="form-container">
             <h3 class="message-title">Message user</h3>
             <form action="" id="message-form">
-              <input
-                type="search"
-                id="user-search"
-                name="user-search"
-                placeholder="Search for User"
-              />
+              <div class="search-container">
+                  <input
+                  type="search"
+                  id="user-search"
+                  name="user-search"
+                  placeholder="Search for User"
+                />
+                <div class="auto-complete hide">
+                  <ul class="autocomplete-list">
+                  </ul>
+                </div>
+              </div>
               <textarea
                 name="message"
                 id="message"
