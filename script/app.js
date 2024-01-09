@@ -444,19 +444,18 @@ const addNameToInput = () => {
 addNameToInput();
 
 const saveSettings = () => {
-    let sendEmail = document.querySelector('#email-notification').value;
-    let setProfile = document.querySelector('#profile').value;
-    let timeZone = document.querySelector('#timezone').value;
+    let sendEmail = document.querySelector('#email-notification');
+    let setProfile = document.querySelector('#profile');
+    let timeZone = document.querySelector('#timezone');
     
     const saveBtn = document.querySelector('.save-btn');
     const cancelBtn = document.querySelector('.cancel-btn');
     
     const saveToLocalStorage = () => {
-        localStorage.setItem('email', sendEmail);
-        localStorage.setItem('profile', setProfile);
-        localStorage.setItem('timezone', timeZone);
+        localStorage.setItem('email', sendEmail.checked);
+        localStorage.setItem('profile', setProfile.checked);
+        localStorage.setItem('timezone', timeZone.value);
         console.log('settings saved');
-    
     }
 
     const removeFromLocalStorage = () => {
@@ -466,25 +465,40 @@ const saveSettings = () => {
         console.log('settings removed');
 
         //reset the UI to the default values
-        sendEmail = 'off';
-        setProfile = 'off';
+        sendEmail.value = 'off';
+        setProfile.value = 'off';
+        timeZone.value = 'GMT';
+        //set checked elements to false
+        sendEmail.checked = false;
+        setProfile.checked = false;
+
     }
 
     saveBtn.addEventListener('click', saveToLocalStorage);
     cancelBtn.addEventListener('click', removeFromLocalStorage);
-
+    
+    //set the values from the local storage when the page loads 
     const getFromLocalStorage = () => {
         let email = localStorage.getItem('email');
         let profile = localStorage.getItem('profile');
         let time = localStorage.getItem('timezone');
-        console.log(email, profile, time);
         //set the values of the input to the values in local storage
-        sendEmail = email;
-        setProfile = profile;
-        timeZone = time;
+        if (email == 'true') {
+            sendEmail.checked = true;
+        } else {
+            sendEmail.checked = false;
+        }
+
+        if (profile == 'true') {
+            setProfile.checked = true;
+        } else {
+            setProfile.checked = false;
+        }
     }
 
-    getFromLocalStorage();
+    //set the values of the input to the values in local storage
+    window.addEventListener('load', getFromLocalStorage);
+
 }
 
 saveSettings();
