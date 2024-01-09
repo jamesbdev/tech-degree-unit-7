@@ -403,7 +403,6 @@ while (list.firstChild) {
                 listItem.remove();
             }
         }
-     
    }
 }
 
@@ -411,7 +410,7 @@ while (list.firstChild) {
 const addNoUserMsg = () => {
    if (list.children.length == 0) {
      const noUserMessage = document.createElement('li');
-     noUserMessage.textContent = 'No user found';
+     noUserMessage.textContent = 'No users found';
      noUserMessage.classList.add('list-item');
      list.appendChild(noUserMessage);
     }
