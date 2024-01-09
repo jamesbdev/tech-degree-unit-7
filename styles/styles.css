@@ -141,7 +141,7 @@ header .student-container {
     position: relative;
     padding: .5rem;
     border-radius: 5px;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 .alert p {
@@ -517,6 +517,8 @@ form input::placeholder, form textarea::placeholder {
     height: 12rem;
 }
 
+
+
 /* tablet view */
 @media (min-width: 768px) {
 
@@ -728,9 +730,8 @@ form input::placeholder, form textarea::placeholder {
     }
 
     .form-container {
-        /* width: 95%; */
+        width: 95%;
         margin: 0 auto;
-        padding-right: 10px;
     }
 
     .social-stats {
@@ -739,6 +740,10 @@ form input::placeholder, form textarea::placeholder {
 
     .members-individual:last-of-type {
         border-bottom: none;
+    }
+
+    .social-child p {
+        font-size: 2rem;
     }
 
 
