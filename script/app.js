@@ -347,11 +347,17 @@ const showList = (e) => {
     if (value == '') {
       autoComplete.classList.add('hide');
       autoComplete.classList.remove('show');
+      //remove list items 
+      const listItems = document.querySelectorAll('.list-item');
+      for(let i = 0; i < listItems.length; i++) {
+        listItems[i].remove();
+      }
     } else {
       autoComplete.classList.add('show');
       autoComplete.classList.remove('hide');
     }
 }
+
 
 //add an event listener when typing inside the input 
 searchInput.addEventListener('keyup', (event) => {
@@ -364,22 +370,31 @@ searchInput.addEventListener('keyup', (event) => {
     let userName = userData[i].name.toLowerCase();
     //check if the user name matches with the search input value 
    if (userName.includes(value)) {
-      //create a list item
-      const listItem = document.createElement('li');
-      //add class to list item
-      listItem.classList.add('list-item');
-      //add the HTML needed in the list item
-      listItem.innerHTML =  `
-      <img src="${userData[i].image}" alt="${userData.name}">
-      <div class="user-information">
+        //create a list item
+   const listItem = document.createElement('li');
+   //add class to list item
+   listItem.classList.add('list-item');
+   //add the HTML needed in the list item
+   listItem.innerHTML =  `
+    <img src="${userData[i].image}" alt="${userData.name}">
+    <div class="user-information">
         <p class="user-name">${userData[i].name}</p>
         <p class="user-email">${userData[i].email}</p>
-      </div>
-      `;
-      //add list item to DOM
-      list.appendChild(listItem);
-   } else {
-     console.log('does not match');
+    </div>
+    `;
+   //add list item to DOM
+   list.appendChild(listItem);
+   } 
+
+   const listItems = document.querySelectorAll('.list-item');
+   //loop through list items 
+   for(let j = 0; j < listItems.length; j++) {
+    const listItem = listItems[j];
+    const name = listItems[j].querySelector('.user-name').innerText.toLowerCase();
+    if (name.includes(value) == false) {
+        //remove li 
+        listItem.remove();
+    }
    }
 }
 })
