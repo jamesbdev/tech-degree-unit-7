@@ -19,13 +19,13 @@ let trafficData = {
     labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
     datasets: [{
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850],
-      backgroundColor: 'rgba(116, 119, 191, .3)',
+      backgroundColor: 'rgba(67, 46, 127, 0.3)',
       borderWidth: 1,
     }]
 }
 
 let trafficOptions = {
-    backgroundColor: 'rgba(112, 104, 201, .5)',
+    backgroundColor: 'rgba(67, 46, 127, 0.3)',
     fill: true,
     aspectRatio: 2.5,
     animation: {
@@ -83,7 +83,7 @@ trafficNav.addEventListener('click', (event) => {
             labels: ["S", "M", "T","W", "T", "F", "S"],
             datasets: [{
               data: [200, 250, 300, 270, 250, 320, 300],
-              backgroundColor: 'rgba(116, 119, 191, .3)',
+              backgroundColor: 'rgba(67, 46, 127, .3)',
               borderWidth: 1,
             }]
         }
@@ -93,7 +93,7 @@ trafficNav.addEventListener('click', (event) => {
             labels: ["Week 1", "Week 2", "Week 3","Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
             datasets: [{
               data: [400, 800, 450, 600, 650, 500, 1000, 800],
-              backgroundColor: 'rgba(116, 119, 191, .3)',
+              backgroundColor: 'rgba(67, 46, 127, .3)',
               borderWidth: 1,
             }]
         }
@@ -104,7 +104,7 @@ trafficNav.addEventListener('click', (event) => {
             labels: ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug"],
             datasets: [{
               data: [1000, 1500, 1250, 1750, 2000, 1500, 1750, 1250],
-              backgroundColor: 'rgba(116, 119, 191, .3)',
+              backgroundColor: 'rgba(67, 46, 127, .3)',
               borderWidth: 1,
             }]
         }
@@ -114,7 +114,7 @@ trafficNav.addEventListener('click', (event) => {
             labels: ["12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"],
             datasets: [{
               data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850],
-              backgroundColor: 'rgba(116, 119, 191, .3)',
+              backgroundColor: 'rgba(67, 46, 127, .3)',
               borderWidth: 1,
             }]
         }
@@ -201,6 +201,7 @@ const addValidation = () => {
     const errorEmpty = document.querySelector('.error-empty');
     const textArea = document.querySelector('#message').value;
     const sectionTitle = document.querySelector('.message-title');
+    const successMessage = document.querySelector('.success-message');
 
  //remove previous messages
     if (errorElement) {
@@ -217,6 +218,9 @@ const addValidation = () => {
     if (errorElement == null) {
         //append to DOM if it doesn't exist
        sectionTitle.insertAdjacentElement('afterend', errorMessage);
+       if (successMessage) {
+           successMessage.remove();
+       }
     }
  } else if (textArea == '') {
         const errorMessage = document.createElement('p');
@@ -226,6 +230,9 @@ const addValidation = () => {
         if (errorEmpty == null) {
             //append to DOM if it doesn't exist
             sectionTitle.insertAdjacentElement('afterend', errorMessage);
+            if (successMessage) {
+                successMessage.remove();
+            }
         }
     }
 
