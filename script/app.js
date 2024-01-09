@@ -364,6 +364,12 @@ searchInput.addEventListener('keyup', (event) => {
 //empty the list when the input is empty 
   showList(event);
   const value = event.target.value.toLowerCase();
+
+  // Clear the list
+while (list.firstChild) {
+    list.removeChild(list.firstChild);
+}
+
   //add list item that matches the search input value 
   //loop through the userData array
   for (let i = 0; i < userData.length; i++) {
