@@ -448,7 +448,7 @@ form input::placeholder, form textarea::placeholder {
 }
 
 .auto-complete {
-    background-color: #ccc;
+    background-color: #ededed;
     padding: 0;
     border-radius: 5px;
 }
@@ -478,9 +478,10 @@ form input::placeholder, form textarea::placeholder {
     flex-direction: column;
     gap: 0.5rem;
     padding: 0;
-    height: 7rem;
+    height: 9rem;
     overflow-y: scroll;
     margin-top: 0;
+    font-size: 0.8rem;
 }
 
 .auto-complete ul li {
