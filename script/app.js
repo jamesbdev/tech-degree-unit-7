@@ -467,7 +467,7 @@ const saveSettings = () => {
         //reset the UI to the default values
         sendEmail.value = 'off';
         setProfile.value = 'off';
-        timeZone.value = 'GMT';
+        timeZone.value = 'select a timezone';
         //set checked elements to false
         sendEmail.checked = false;
         setProfile.checked = false;
@@ -488,12 +488,14 @@ const saveSettings = () => {
         } else {
             sendEmail.checked = false;
         }
-
+    
         if (profile == 'true') {
             setProfile.checked = true;
         } else {
             setProfile.checked = false;
         }
+
+        timeZone.value = time;
     }
 
     //set the values of the input to the values in local storage
