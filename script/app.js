@@ -373,6 +373,8 @@ while (list.firstChild) {
   //add list item that matches the search input value 
   //loop through the userData array
   for (let i = 0; i < userData.length; i++) {
+
+
     let userName = userData[i].name.toLowerCase();
     //check if the user name matches with the search input value 
    if (userName.includes(value)) {
@@ -391,17 +393,46 @@ while (list.firstChild) {
    list.appendChild(listItem);
    } 
 
+
+
    const listItems = document.querySelectorAll('.list-item');
-   //loop through list items 
+
+  
+
+   //Remove list item if it doesn't match the search input value
    for(let j = 0; j < listItems.length; j++) {
-    const listItem = listItems[j];
-    const name = listItems[j].querySelector('.user-name').innerText.toLowerCase();
-    if (name.includes(value) == false) {
-        //remove li 
-        listItem.remove();
-    }
+        const listItem = listItems[j];
+        const name = listItems[j].querySelector('.user-name');
+        if (name !== null) {
+            const nameText = name.innerText.toLowerCase();
+            if (nameText.includes(value) == false) {
+                //remove li 
+                listItem.remove();
+            }
+        }
+     
    }
+   
+
 }
+
+const addNoUserMsg = () => {
+    //check for list-items 
+    //if there are no list-items 
+      //create the not found message 
+      //append message to the list 
+       //create a message when no user is found
+
+   if (list.children.length == 0) {
+     const noUserMessage = document.createElement('li');
+     noUserMessage.textContent = 'No user found';
+     noUserMessage.classList.add('list-item');
+     list.appendChild(noUserMessage);
+    }
+}
+
+addNoUserMsg();
+
 })
 
 const items = document.querySelectorAll('.autocomplete-list .list-item');
@@ -426,6 +457,8 @@ const addNameToInput = () => {
 }
 
 addNameToInput();
+
+
 
 
 
