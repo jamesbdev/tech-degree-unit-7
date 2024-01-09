@@ -423,7 +423,7 @@ form input::placeholder, form textarea::placeholder {
     background-color: #efefef;
     border: 1px solid var(--border-grey);
     border-radius: 5px;
-    color: var(--border-grey);
+    color: #333;
     -moz-appearance:none; /* Firefox */
     -webkit-appearance:none; /* Safari and Chrome */
     appearance:none;
@@ -544,6 +544,7 @@ form input::placeholder, form textarea::placeholder {
 
     .daily-traffic canvas {
         width: 300px;
+        padding: 10px;
     }
 
     .mobile-users {
@@ -692,11 +693,12 @@ form input::placeholder, form textarea::placeholder {
     .recent-activity, 
     .settings-section {
         width: 45vw;
+        /* padding-left: 0.8rem; */
     }
 
     .settings-section {
         margin-top: 0;
-        /* padding-left: 10px; */
+        padding-left: 0.8rem;
     }
 
     .members-individual {

@@ -443,6 +443,55 @@ const addNameToInput = () => {
 
 addNameToInput();
 
+const saveSettings = () => {
+    let sendEmail = document.querySelector('#email-notification').value;
+    let setProfile = document.querySelector('#profile').value;
+    let timeZone = document.querySelector('#timezone').value;
+    
+    const saveBtn = document.querySelector('.save-btn');
+    const cancelBtn = document.querySelector('.cancel-btn');
+    
+    const saveToLocalStorage = () => {
+        localStorage.setItem('email', sendEmail);
+        localStorage.setItem('profile', setProfile);
+        localStorage.setItem('timezone', timeZone);
+        console.log('settings saved');
+    
+    }
+
+    const removeFromLocalStorage = () => {
+        localStorage.removeItem('email');
+        localStorage.removeItem('profile');
+        localStorage.removeItem('timezone');
+        console.log('settings removed');
+
+        //reset the UI to the default values
+        sendEmail = 'off';
+        setProfile = 'off';
+    }
+
+    saveBtn.addEventListener('click', saveToLocalStorage);
+    cancelBtn.addEventListener('click', removeFromLocalStorage);
+
+    const getFromLocalStorage = () => {
+        let email = localStorage.getItem('email');
+        let profile = localStorage.getItem('profile');
+        let time = localStorage.getItem('timezone');
+        console.log(email, profile, time);
+        //set the values of the input to the values in local storage
+        sendEmail = email;
+        setProfile = profile;
+        timeZone = time;
+    }
+
+    getFromLocalStorage();
+}
+
+saveSettings();
+
+
+
+
 
 
 
