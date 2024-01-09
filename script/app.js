@@ -385,7 +385,6 @@ while (list.firstChild) {
     <img src="${userData[i].image}" alt="${userData.name}">
     <div class="user-information">
         <p class="user-name">${userData[i].name}</p>
-        <p class="user-email">${userData[i].email}</p>
     </div>
     `;
    //add list item to DOM
@@ -404,6 +403,30 @@ while (list.firstChild) {
    }
 }
 })
+
+const items = document.querySelectorAll('.autocomplete-list .list-item');
+
+//add the name to the input after the user has clicked on the list item
+
+const addNameToInput = () => {
+    list.addEventListener('click', (event) => {
+        //get the value of the list item 
+        const value = event.target.innerText;
+        //add the value to the input 
+        searchInput.value = value;
+        //hide the list
+        autoComplete.classList.add('hide');
+        autoComplete.classList.remove('show');
+        //remove list items 
+        const listItems = document.querySelectorAll('.list-item');
+        for(let i = 0; i < listItems.length; i++) {
+          listItems[i].remove();
+        }
+    })
+}
+
+addNameToInput();
+
 
 
 
