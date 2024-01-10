@@ -148,7 +148,6 @@ header .student-container {
     padding: .5rem;
     border-radius: 5px;
     margin: 1rem 0 0;
-    /* padding: 0 0.8rem; */
 }
 
 .alert p {
@@ -219,7 +218,6 @@ header .student-container {
     border-top: 1px solid var(--border-grey);
     border-bottom: 1px solid var(--border-grey);
     margin-left: 0;
-    /* padding-left: 10px; */
 }
 
 /* social stats widget */
@@ -274,6 +272,10 @@ header .student-container {
     align-items: center;
 }
 
+.traffic-chart canvas, .daily-traffic canvas {
+    padding: 0 0.8rem;
+}
+
 /* members section */
 
 .members-main {
@@ -289,6 +291,8 @@ header .student-container {
     border-bottom: 1px solid var(--border-grey);
     padding: 1rem;
     font-size: 14px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .members-individual img {
@@ -546,7 +550,6 @@ form input::placeholder, form textarea::placeholder {
 
 .recent-activity h3, .new-members h3, .message-user h3, .settings-section h3 , .social-stats h3, .mobile-users h3, .daily-traffic h3 , .traffic-chart h3{
     padding-left: 0.8rem;
-
 }
 
 .traffic-chart nav {
@@ -581,6 +584,18 @@ form input::placeholder, form textarea::placeholder {
 
     .daily-traffic, .mobile-users, .message-user, .settings-section, .recent-activity {
       width: 45vw;
+    }
+
+    .members-individual {
+        width: 90%;
+    }
+
+    .daily-traffic {
+        border-bottom: none;
+    }
+
+    .social-stats {
+        margin-top: 0;
     }
     
     /* full width elements */
@@ -695,8 +710,7 @@ form input::placeholder, form textarea::placeholder {
 
     .mobile-users {
         border-left: 1px solid var(--border-grey);
-        border-bottom: 1px solid var(--border-grey);
-        padding-left: 0.8rem;
+        border-bottom: none;
         padding-bottom: 0.8rem;
         border-top: 1px solid var(--border-grey);
     }
@@ -735,6 +749,11 @@ form input::placeholder, form textarea::placeholder {
     .members-section section:first-child {
         border-right: 1px solid var(--border-grey);
     }
+
+    /* .members-individual {
+        width: 100%;
+    } */
+    
 
     .user-container {
         display: flex;
@@ -801,6 +820,7 @@ form input::placeholder, form textarea::placeholder {
 
     .social-stats {
         border-bottom: 1px solid var(--border-grey);
+        padding-bottom: 1rem;
 
     }
 
@@ -812,7 +832,25 @@ form input::placeholder, form textarea::placeholder {
         font-size: 2rem;
     }
 
+    .new-members {
+        border-top: none;
+        margin-top: 0;
+    }
+    
+    .new-members h3, .recent-activity h3 {
+        padding-top: 1rem;
+    }
 
+    .settings-container {
+        width: 100%;
+        padding: 0;
+    }
 
+    .settings-section h3 {
+        padding-left: 0;
+    }
 
+    .settings-section {
+        padding: 0;
+    }
 }
