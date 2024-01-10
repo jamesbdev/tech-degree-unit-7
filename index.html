@@ -60,8 +60,11 @@
     <!--grid container-->
     <main class="main">
       <!--dashboard section-->
-      <section class="dashboard-container" id="home">
+      <div class="dashboard-header">
         <h3>Dashboard</h3>
+        <div class="grey-box"></div>
+      </div>
+      <section class="dashboard-container" id="home">
         <div class="alert">
           <p>Alert: you have unread messages</p>
           <div class="close-icon">X</div>
@@ -84,12 +87,12 @@
       </section>
       <!--Daily traffic chart (half width tablet-up)-->
       <section class="daily-traffic">
-        <h4>Daily traffic</h4>
+        <h3>Daily traffic</h3>
         <canvas id="daily-traffic"></canvas>
       </section>
       <!--mobile users chart (half width tablet-up)-->
       <section class="mobile-users">
-        <h4>Mobile users</h4>
+        <h3>Mobile users</h3>
         <canvas id="mobile-user"></canvas>
       </section>
 
@@ -321,6 +324,7 @@
       <!--settings (half width desktop up)-->
       <section class="settings-section" id="settings">
         <h3>Settings</h3>
+        <div class="settings-container">
           <div class="toggle-container">
             <label for="email-notification">Send email notifications</label>
             <input
@@ -347,6 +351,8 @@
                 <button type="submit" class="save-btn">Save</button>
                 <button class="cancel-btn">Cancel</button>
               </div>
+        </div>
+       
       </section>
     </main>
     <script src="script/app.js"></script>

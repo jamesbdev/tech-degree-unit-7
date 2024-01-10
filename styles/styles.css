@@ -15,6 +15,7 @@
 h3 {
     text-transform: uppercase;
     font-size: 0.9rem;
+    /* padding-left: 0.8rem; */
 }
 
 
@@ -57,9 +58,12 @@ body {
 main {
     margin: 0;
     display: grid;
-    padding: 10px;
+    /* padding: 10px; */
     box-sizing: border-box;
+    /* width: 100%; */
 }
+
+
 
 /** header **/ 
 
@@ -143,7 +147,8 @@ header .student-container {
     position: relative;
     padding: .5rem;
     border-radius: 5px;
-    margin: 1rem 0;
+    margin: 1rem 0 0;
+    /* padding: 0 0.8rem; */
 }
 
 .alert p {
@@ -158,6 +163,23 @@ header .student-container {
     font-size: 0.8rem;
 }
 
+.dashboard-header {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dashboard-header h3 {
+  padding-left: 0.8rem;
+}
+
+.grey-box {
+    border-left: 1px solid var(--border-grey);
+    border-bottom: 1px solid var(--border-grey);
+    background-color: #ededed;
+    flex-grow: 1;
+}
+
 /* Graph */ 
 
 /* make containers full width on mobile */
@@ -167,6 +189,7 @@ header .student-container {
 
 .traffic-chart {
     margin-bottom: 1.5rem;
+    box-sizing: border-box;
 }
 
 .graph-nav ul {
@@ -196,7 +219,7 @@ header .student-container {
     border-top: 1px solid var(--border-grey);
     border-bottom: 1px solid var(--border-grey);
     margin-left: 0;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 
 /* social stats widget */
@@ -207,8 +230,8 @@ header .student-container {
 }
 
 .social-stats {
-    /* margin-bottom: 1.5rem; */
-    padding-bottom: 1.5rem;
+    border-top: 1px solid var(--border-grey);
+    margin-top: 1rem;
 }
 
 .social-child {
@@ -313,6 +336,7 @@ header .student-container {
 
 .settings-section .success-message {
     margin: 0;
+    padding-left: 0.8rem;
 }
 
 .submit-btn {
@@ -349,11 +373,8 @@ form input::placeholder, form textarea::placeholder {
     gap: 1rem;
     position: relative;
     justify-content: flex-start;
-
-}
-
-.settings-section {
     margin-top: 1rem;
+    border-top: 1px solid var(--border-grey);
 }
 
 .button-container {
@@ -523,6 +544,36 @@ form input::placeholder, form textarea::placeholder {
     height: 12rem;
 }
 
+.recent-activity h3, .new-members h3, .message-user h3, .settings-section h3 , .social-stats h3, .mobile-users h3, .daily-traffic h3 , .traffic-chart h3{
+    padding-left: 0.8rem;
+
+}
+
+.traffic-chart nav {
+    padding: 0 0.8rem;
+}
+
+
+
+.settings-container {
+    padding: 0 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.message-user form {
+    padding: 0 0.8rem;
+}
+
+.new-members {
+    border-top: 1px solid var(--border-grey);
+    margin-top: 0.8rem;
+}
+
+.dashboard-container {
+    padding: 0 0.8rem;
+  }
 
 
 /* tablet view */
@@ -539,9 +590,16 @@ form input::placeholder, form textarea::placeholder {
     .new-members, 
     .recent-activity, 
     .message-user, 
-    .settings-section  {
+    .settings-section {
        grid-column: 1 / span 2;
        width: 90vw;
+    }
+
+ 
+
+    .dashboard-header {
+        grid-column: 1 / span 2; 
+        width: 100%;
     }
 
     /* half width elements */
@@ -743,6 +801,7 @@ form input::placeholder, form textarea::placeholder {
 
     .social-stats {
         border-bottom: 1px solid var(--border-grey);
+
     }
 
     .members-individual:last-of-type {
