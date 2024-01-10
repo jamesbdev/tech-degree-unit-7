@@ -457,12 +457,35 @@ const saveSettings = () => {
     
     const saveBtn = document.querySelector('.save-btn');
     const cancelBtn = document.querySelector('.cancel-btn');
+
+    const addSuccessMsg = () => {
+        console.log('success message added');
+        const message = document.createElement('p');
+        const title = document.querySelector('.settings-section h3');
+        message.classList.add('success-message');
+        message.innerText = "Settings saved";
+        //check if success message already exists
+        const successMessage = document.querySelector('.success-message');
+        if (successMessage == null) {
+            //append to DOM if it doesn't exist
+            title.insertAdjacentElement('afterend', message);
+        }
+        //append to the DOM
+    }
+
+    const removeMessage = () => {
+        const successMessage = document.querySelector('.success-message');
+        if (successMessage) {
+            successMessage.remove();
+        } 
+    }
     
     const saveToLocalStorage = () => {
         localStorage.setItem('email', sendEmail.checked);
         localStorage.setItem('profile', setProfile.checked);
         localStorage.setItem('timezone', timeZone.value);
-        console.log('settings saved');
+        //add success message
+        addSuccessMsg();
     }
 
     const removeFromLocalStorage = () => {
@@ -479,7 +502,11 @@ const saveSettings = () => {
         sendEmail.checked = false;
         setProfile.checked = false;
 
+        removeMessage();
+
     }
+
+
 
     saveBtn.addEventListener('click', saveToLocalStorage);
     cancelBtn.addEventListener('click', removeFromLocalStorage);
@@ -504,6 +531,8 @@ const saveSettings = () => {
 
         timeZone.value = time;
     }
+
+
 
     //set the values of the input to the values in local storage
     window.addEventListener('load', getFromLocalStorage);

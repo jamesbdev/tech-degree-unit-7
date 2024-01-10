@@ -311,6 +311,10 @@ header .student-container {
     margin: 0 0 1.2rem;
 }
 
+.settings-section .success-message {
+    margin: 0;
+}
+
 .submit-btn {
     background-color: var(--main-bg-color);
     padding: 0.8rem;
