@@ -58,6 +58,7 @@ main {
     margin: 0;
     display: grid;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 /** header **/ 
@@ -70,6 +71,7 @@ header {
     align-items: center;
     gap: 1rem;
     padding: .5rem;
+    box-sizing: border-box;
 }
 
 header img {
@@ -194,7 +196,7 @@ header .student-container {
     border-top: 1px solid var(--border-grey);
     border-bottom: 1px solid var(--border-grey);
     margin-left: 0;
-    /* padding-left: 10px; */
+    padding-left: 10px;
 }
 
 /* social stats widget */
@@ -594,6 +596,7 @@ form input::placeholder, form textarea::placeholder {
         grid-area: main-nav;
         padding: 1rem 1rem;
         height: 100%;
+        box-sizing: border-box;
     }
 
     /* grid declaration */
